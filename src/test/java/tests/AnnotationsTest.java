@@ -20,7 +20,7 @@ public class AnnotationsTest extends TestBase{
     @Tag("WEB")
     @ParameterizedTest(name="Тест проверяет что список не пустой на тему {0}")
     @ValueSource( strings = {"Selenide" , "JUnit 5" , "Allure"})
-    void checkTagForArticle(String whatTofind){
+    void checkTagForArticleTest(String whatTofind){
         pageObject.opendMainPage();
         pageObject.setValueToSearch(whatTofind);
         res.checkListIsNotEmpty();
