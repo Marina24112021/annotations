@@ -33,7 +33,7 @@ public class AnnotationsTest extends TestBase{
             "Что такое тестирование | Как тестировщики проверяют, что программа делает то, что нужно"
     }, delimiter = '|')
     @ParameterizedTest(name="Тест проверяет поиск что на запрос по теме {0} есть статьи на сайте")
-    void checkSearchButton(String inputStr, String outputStr){
+    void checkSearchButtonTest(String inputStr, String outputStr){
         pageObject.opendMainPage();
         pageObject.setValueToSearch(inputStr);
         res.shouldCorrectSearch(outputStr);
@@ -46,7 +46,7 @@ public class AnnotationsTest extends TestBase{
     @MethodSource
     @Tag("SMOKE")
     @ParameterizedTest(name = "Тест по проветке меню. ")
-    void selenideSiteShouldDisplayCorrectMenuButtons( NamesOfMenu namesOfMenu){
+    void selenideSiteShouldDisplayCorrectMenuButtonsTest( NamesOfMenu namesOfMenu){
         pageObject.opendMainPage();
         Hashtable<String, String> tableOfMenu = namesOfMenu.getMenuAndDescription();
         tableOfMenu.forEach((key, value) -> {
